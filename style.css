@@ -1,0 +1,881 @@
+/* Used to store all color, fonts, fonts weight  before start the project*/
+:root {
+  --clr-accent-400: hsl(12, 88%, 59%);
+  --clr-accent-500: hsl(12, 60%, 45%);
+
+  --clr-accent-300: hsl(12, 88%, 80%);
+  --clr-accent-100: hsl(13, 100%, 96%);
+
+  --clr-primary-100: hsl(228, 39%, 23%);
+
+  --clr-neutral-100: hsl(233, 12%, 13%);
+  --clr-neutral-900: hsl(0, 0%, 98%);
+
+  /* Font Family */
+  --ff-primary: "Be Vietnam Pro", sans-serif;
+
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  /* Font Weight */
+
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+
+  /* variables for space between elements: */
+  --size-100: 0.25rem;
+  --size-200: 0.5rem;
+  --size-300: 0.75rem;
+  --size-400: 1rem;
+  --size-500: 1.25rem;
+  --size-600: 1.5rem;
+  --size-700: 1.75rem;
+  --size-800: 2rem;
+  --size-900: 2.25rem;
+  --size-large: 3rem;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* General styling */
+body {
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: var(--clr-primary-100);
+}
+
+.padding-block-900 {
+  padding-block: var(--size-600);
+}
+
+/* For the main container, we will set up */
+
+/* Here we will  */
+.container {
+  /* It's responsible for separate the walls from the containers elements from the body structure. */
+
+  /* This is perfect for responsove peojects */
+  max-width: 1110px;
+
+  /* It's give some space between the containers and the content */
+  padding: 2rem;
+
+  width: min(var(max-width, 100%));
+  /* This is for margin left and right */
+
+  /* Determines that both sides have the same margin  */
+  margin-inline: auto;
+}
+
+/* Now we use this container called 'even-column' to change the display to grid and separate the other conatiners. */
+
+.even-columns {
+  display: grid;
+  gap: 2rem;
+}
+
+/* This part will divide all container in grid box with the minimal width = 50em */
+/* This means when the size of the page is bigger than 800px, put the '.even.column' containers in columns */
+@media (min-width: 50em) {
+  .even-columns {
+    /* This determines the direction */
+    grid-auto-flow: column;
+    /* This determines the equal size for both columns and not static */
+    grid-auto-columns: 1fr;
+  }
+
+  .justify-self-end {
+    display: flex;
+  }
+  /* When a screen is bigger than 800px - the button goes to the end of the page. */
+  .justify-self-end {
+    justify-content: end;
+    align-items: center;
+  }
+}
+
+/* Text align center */
+
+.text-center {
+  text-align: center;
+}
+
+.text-center p {
+  /* Centralize this element in the page. */
+  margin-inline: auto;
+}
+
+@media (max-width: 50em) {
+  .text-center-sm-only {
+    text-align: center;
+  }
+
+  .text-center-sm-only p {
+    margin-inline: auto;
+    margin-top: 2rem;
+  }
+}
+
+/* The next step is create variables for space between the content. You create this inside the :root at the beginning of the project */
+
+.bg-orange {
+  background-color: var(--clr-accent-400);
+  color: white;
+}
+
+@media (min-width: 407px) {
+  .bg-orange {
+    min-width: 10rem;
+  }
+}
+
+h1 {
+  line-height: 1.2;
+  font-size: 2.5rem;
+}
+p {
+  max-width: 32ch;
+  color: grey;
+  font-family: var(--ff-primary);
+  opacity: 0.8;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p[data-width="wide"] {
+  max-width: 42ch;
+}
+
+/* Button */
+
+.justfy-self-end {
+  justify-self: end;
+}
+
+.button[data-type="inverted"] {
+  color: var(--clr-accent-400);
+  background-color: var(--clr-neutral-900);
+}
+
+.button[data-shadow="none"] {
+  box-shadow: none;
+}
+
+.button[data-type="inverted"]:hover,
+.button[data-type="inverted"]:focus-visible {
+  color: var(--clr-accent-300);
+  background-color: var(--clr-neutral-900);
+}
+
+.button:hover,
+.button:focus-visible {
+  background-color: var(--clr-accent-300);
+}
+
+/* Ghost image */
+
+/* => First change the position of the container to relative */
+
+.ghost {
+  position: relative;
+  isolation: isolate;
+  text-align: center;
+}
+
+/* isolation: isolate; - This prevents the element from escaping out of this part */
+
+/* =>Second step */
+.ghost::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("images/bg-tablet-pattern.svg"),
+    url("images/bg-tablet-pattern.svg");
+  opacity: 0.1;
+
+  /* The background-position property sets the starting position of a background image.
+ */
+  /*  By default, a background-image is placed at the top-left corner of an element, and repeated both vertically and horizontally. */
+  background-position: -15rem -5rem, 49rem -42rem;
+
+  /* By defaulf the image continues repeating */
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* Numbered Items */
+
+/* create a numbered list in each paragraph */
+.numbered-items {
+  counter-reset: count;
+  width: fit-content;
+  /* Setting up the margin left and margin right with the same value */
+  margin-inline: auto;
+}
+
+.numbered-items li {
+  counter-increment: count;
+}
+
+/* This part put all side by side: number and title */
+.numbered-items div {
+  display: grid;
+  position: relative;
+  /* min-content - reduces the size of the conatiner to the minimal size. */
+  align-items: center;
+  column-gap: 0.7rem;
+  grid-template-columns: min-content 1fr;
+}
+
+/* This stretch the paragraph. */
+.numbered-items p {
+  grid-column: 1 / -1;
+}
+
+/* => Third - Change the layout when the page is bigger than 50em (800px) using 'media query'. */
+@media (min-width: 30em) {
+  .numbered-items p {
+    grid-column: 2 / -1;
+  }
+}
+
+.numbered-title {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  line-height: 1rem;
+}
+
+.numbered-body {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
+.section-text {
+  margin-bottom: 3px;
+}
+
+.numbered-items div::before {
+  content: "0" counter(count);
+  display: flex;
+  align-items: center;
+  background-color: var(--clr-accent-400);
+  color: hsl(0, 0%, 98%);
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  border-radius: 100vw;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
+@media (max-width: 30em) {
+  .numbered-items div::after {
+    content: "";
+    display: block;
+    inset: 0 -100vw 0 0;
+    border-radius: 100vw 0 0 100vw;
+    z-index: -1;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    background-color: rgba(245, 126, 97, 0.2);
+    /* width: 100%; */
+    height: 40px;
+    box-shadow: 5em 0 rgba(245, 126, 97, 0.2);
+  }
+
+  .numbered-title {
+    font-size: 15px;
+  }
+}
+
+/* When the page is bigger than 50em(800px) */
+/* I want the numbers outside of the paragraph */
+
+@media (min-width: 50em) {
+  .ghost {
+    text-align: left;
+  }
+}
+
+@media (max-width: 50em) {
+}
+
+/* ********************************* */
+
+/* inset - property that is a shorthand that corresponds to the top,
+  right,
+  bottom,
+  and/or left properties. It has the same multi-value syntax of the margin shorthand. */ /* Navbar CSS */
+.visually-hidden {
+  position: absolute;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Navigation bar */
+
+.primary-header {
+  padding-top: var(--size-700);
+}
+
+.mobile-nav-toggle {
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0.5em;
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+.link {
+  text-decoration: none;
+  color: hsl(228, 39%, 23%);
+}
+
+.link:hover {
+  color: hsl(12, 88%, 59%);
+}
+.button {
+  display: inline-flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  border: 0;
+  border-radius: 100vmax;
+  line-height: 1;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 1.25em 2.5em;
+  color: var(--clr-neutral-900);
+  background-color: var(--clr-accent-400);
+  box-shadow: 0 1.25em 1em -1em var(--clr-accent-500);
+}
+
+/* Changing the container tha contain the links to display: flex - It will put everything in side by side. */
+.nav-list {
+  display: flex;
+  gap: 1.2rem;
+}
+
+/* This will hide links until the  screen is smaller than 800px */
+@media (max-width: 50em) {
+  .primary-navigation {
+    display: none;
+    position: fixed;
+    padding: 2rem;
+    max-width: 27rem;
+    margin-left: auto;
+    background-color: hsl(13, 100%, 94%);
+    inset: 7rem var(--size-400) auto;
+    border-radius: var(--size-100);
+    box-shadow: 0 0 0.75em rgb(0, 0, 0, 0.05);
+    opacity: 0.9;
+  }
+
+  /* This will activated when the toggle box shows up */
+  .primary-header[data-overlay]::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
+  }
+
+  .nav-list {
+    display: grid;
+    gap: clamp(var(--size-100), 5vw, var(--size-700));
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .nav-list a {
+    text-decoration: none;
+    color: var(--clr-primary-100);
+    font-weight: 800;
+  }
+
+  .nav-list a:hover,
+  .nav-list a:focus {
+    color: var(--clr-accent-400);
+  }
+
+  .primary-navigation[data-visible] {
+    display: block;
+    z-index: 100;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: sticky;
+    top: var(--size-large);
+    right: var(--size-400);
+    cursor: pointer;
+    top: size;
+    background-color: transparent;
+    border: 0;
+    padding: 0.5em;
+  }
+
+  .mobile-nav-toggle .icon-close {
+    /* this hiddenthe elements */
+    display: none;
+  }
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  /* This reset all text HTML elements */
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* When the page is bigger then 800px, hide the orange button by changing the display to none. */
+@media (max-width: 50em) {
+  .display-md-inline-flex {
+    display: inline-flex;
+  }
+  .display-sm-none {
+    display: none;
+  }
+  .social-list {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+/* Giving some space. */
+:where(.flow :not(:first-child)) {
+  margin-top: var(--size-500);
+  margin-bottom: var(--size-900);
+}
+/* ******************************************* */
+
+/* Footer */
+
+/* This is one way that you mark elements how to see how they looks like  */
+
+.bg-black {
+  background-color: rgba(21, 25, 54, 0.8);
+}
+
+/* Change the column order */
+.primary-footer-wrapper {
+  display: grid;
+
+  gap: 1.5rem;
+  grid-template-areas:
+    "social-logo"
+    "nav"
+    "text-final"
+    "form";
+}
+
+.primary-footer-wrapper > :nth-child(4) {
+  grid-area: text-final;
+}
+.primary-footer-wrapper > :nth-child(1) {
+  grid-area: social-logo;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: rem;
+  width: 250px;
+  height: 80px;
+}
+
+.primary-footer-wrapper > :nth-child(2) {
+  grid-area: nav;
+  columns: 2;
+}
+
+.primary-footer-wrapper > :nth-child(3) {
+  grid-area: form;
+}
+
+.primary-footer .form {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-between;
+  min-width: 350px;
+  position: relative;
+}
+
+.primary-footer input {
+  border-radius: 100vw;
+  border: 0;
+  padding: 0.2rem 2.5rem;
+  height: 3rem;
+  width: 55%;
+}
+
+.form p {
+  color: white;
+  font-size: 11px;
+  margin-top: 0.5rem;
+}
+.final-text {
+  margin-left: 0.7rem;
+}
+
+.btn-final {
+  display: inline-flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  border: 0;
+  border-radius: 100vmax;
+  /* line-height: 1; */
+  font-weight: bold;
+  font-size: 12px;
+  padding: 1em 1.5em;
+  color: var(--clr-neutral-900);
+  background-color: var(--clr-accent-400);
+}
+
+.items a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Changing for bigger page */
+@media (min-width: 50em) {
+  .primary-footer input {
+    border-radius: 100vw;
+    border: 0;
+    padding: 1.2rem 1.2rem;
+    height: 2.5rem;
+  }
+}
+
+/* Changing for smaller pages */
+@media (max-width: 50em) {
+  .primary-footer input {
+    border-radius: 100vw;
+    border: 0;
+    padding: 1.2rem 1.2rem;
+    height: 1.5rem;
+    width: 200px;
+  }
+}
+
+/* Solving the structure in page bigger than 800px */
+@media (min-width: 50em) {
+  .primary-footer-wrapper {
+    grid-template-areas: "social-logo nav form";
+  }
+  .primary-footer-logo-social {
+    align-items: flex-start;
+    gap: 2rem;
+    grid-column-gap: 3rem;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 50em) {
+  .primary-footer-wrapper > * {
+    margin-inline: auto;
+    /* display: grid; */
+  }
+  .form {
+    align-items: center;
+  }
+
+  .form p {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  ul {
+    margin-top: 0.7rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.primary-footer-wrapper {
+  padding: 3rem;
+}
+
+/* .primary-footer > * > * > * {
+  outline: 2px solid red; */
+
+/* This align all my grid boxes in one column */
+
+/* Footer section */
+
+/* Divide one column in two columns */
+.footer-nav {
+  gap: clamp(1rem, 10vw, 1.5rem);
+}
+
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* hover links */
+.footer-nav a:is(:hover, :focus) {
+  color: var(--clr-accent-400);
+}
+
+/* -> Changing color in links */
+/* You can find the whole expanation inside the file called 'Research.txt' */
+
+/* Social.list */
+
+.social-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  width: 2rem;
+  aspect-ratio: 1;
+  fill: white;
+}
+
+.social-list a:is(:hover, :focus) .social-icon {
+  fill: hsl(12, 88%, 59%);
+}
+
+/* Changing the size of the icons when the page is bigger than 800px  */
+
+@media (min-width: 50em) {
+  .social-icon {
+    width: 1.7rem;
+  }
+  .social-list {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  input {
+    flex: 2;
+  }
+}
+
+/* Carousel */
+/* carousel-main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+} */
+.title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.underline {
+  height: 0.25rem;
+  width: 1rem;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+.carousel-container {
+  width: 40%;
+  height: 30%;
+  max-width: 30%;
+}
+
+.carousel-title {
+  padding: 2rem;
+}
+.review {
+  background: black;
+  padding: 2.5rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s linear;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  background-color: hsl(13, 100%, 94%);
+  width: 60%;
+  height: 40%;
+  margin-bottom: 2rem;
+}
+.review:hover {
+  box-shadow: var(--dark-shadow);
+}
+.img-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+#person-img {
+  width: 100%;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+}
+.img-container::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f10e";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 60%;
+  transform: translateY(-13%);
+  transform: translatex(-15%);
+  background: rgb(251, 108, 46);
+  color: var(--clr-white);
+}
+.img-container::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -0.5rem;
+  border-radius: 50%;
+  border: 2rem solid rgb(251, 108, 46);
+}
+#author {
+  margin-bottom: 0.25rem;
+  font-size: 30px;
+  text-transform: capitalize;
+}
+#job {
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  color: var(--clr-primary-5);
+  font-size: 0.85rem;
+}
+#info {
+  margin-bottom: 1.5rem;
+  align-self: center;
+  font-size: 13px;
+  width: 100%;
+  max-width: 47ch;
+  margin-top: 1rem;
+  color: black;
+}
+/* .prev-btn,
+.next-btn {
+  color: var(--clr-primary-7);
+  font-size: 1.25rem;
+  background: transparent;
+  border-color: transparent;
+  margin: 0 0.5rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.prev-btn:hover,
+.next-btn:hover {
+  color: var(--clr-primary-5);
+} */
+.random-btn {
+  /* margin-top: 0.5rem;
+  background: var(--clr-primary-10);
+  color: var(--clr-primary-5);
+  padding: 0.25rem 0.5rem;
+  text-transform: capitalize;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  border-color: var(--clr-primary-5);
+  cursor: pointer; */
+
+  display: inline-flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  border: 0;
+  border-radius: 100vmax;
+  letter-spacing: 0.9;
+  line-height: 1;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 0.9em 1.5em;
+  color: var(--clr-neutral-900);
+  background-color: var(--clr-accent-400);
+  box-shadow: 0 1.25em 1em -1em var(--clr-accent-500);
+}
+/* .random-btn:hover {
+  background: var(--clr-primary-5);
+  color: var(--clr-primary-1);
+} */
+
+@media (max-width: 50em) {
+  .review {
+    min-width: 25rem;
+  }
+}

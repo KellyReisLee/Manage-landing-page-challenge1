@@ -1,0 +1,131 @@
+
+1. Color picker mac.
+
+2.Emmet - plugin with abbreviations:
+ https://docs.emmet.io/abbreviations/
+
+
+3. Site to deploy my webppages called -  netlify;
+
+
+4.   max-width: 30ch;
+ - He uses the unit that is relative to the width of the "0" (zero).
+ - limitated the size of the component.
+
+
+5. This also helps to limit the width of the element.
+
+ - Insert inside the HTML element:
+  <p data-width="wide">
+
+  - write in CSS sheet:
+  p[data-width="wide"] {
+  max-width: 42ch;
+}
+
+6. CSS Grid:
+ - If your main container is a Grid - You can use in each child element the property callled 'justfy-self': 
+
+  - You can:
+  justfy-self: end;
+  justify-self: center;
+  justify-self: start;
+
+
+
+7. Working with buttons - It's more easy when you change the display to 'inline-flex'.
+
+
+8. padding-block:
+
+The padding-block CSS shorthand property defines the logical block start and end padding of an element.
+
+Example:
+/* <length> values */
+padding-block: 10px 20px; /* An absolute length */
+padding-block: 1em 2em; /* relative to the text size */
+padding-block: 10px; /* sets both start and end values */
+
+/* <percentage> values */
+padding-block: 5% 2%; /* relative to the nearest block container's width */
+
+
+
+
+9. Inserting images ghost:
+
+
+10. Inserting social-icons:
+1) Create a new file called social-icons.svg;
+
+2) Go to this web page:
+https://svgsprit.es/
+
+3) Select all image icons that sre inside the project and drag to this website.
+
+4)
+
+
+
+
+
+# Skeleton:
+
+1) Preparing the page structure:
+
+
+
+
+
+
+
+
+
+2) For the Navbar - 
+
+In html:
+Create 3 div containers one isnide another.
+
+ <header class="primary-header">
+  <div class="container header">
+  <div class="nav-wrapper">
+   - Here goes all the content... like:
+   -> Image that goes inside anchor tag.
+   -> button - Look! You have to put the images that represent this button inside the button
+
+   <button
+            class="mobile-nav-toggle"
+            aria-controls="primary-navigation"
+            aria-expanded="false"
+          >
+
+            <!-- Image sfor the hamburguer menu -->
+           
+            <img
+              class="icon-hamburguer"
+              src="images/icon-hamburger.svg"
+              aria-hidden="true"
+            />
+            <img
+              class="icon-close"
+              src="images/icon-close.svg"
+              aria-hidden="true"
+            />
+
+
+             <span class="visually-hidden">Menu</span>
+ </button>
+
+
+ -> Nav conatiner with links;
+ -> button
+
+
+=>Important!
+<span class="visually-hidden">Menu</span>
+
+ - Accessible hiding allows an element to disappear from the screen, while being accessible to screen reader users. Technically, the solution is to add a CSS class on the element that should not be visible.
+https://a11y-guidelines.orange.com/en/web/components-examples/accessible-hiding/
+
+
+

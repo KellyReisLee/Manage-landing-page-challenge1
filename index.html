@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Style sheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Fonts Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Social Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <title>Vite App</title>
+  </head>
+
+  <body>
+    <!-- First thing in this project is 'header' (bar-navegation)-->
+    <header class="primary-header">
+      <!-- This will hold everything together in this container -->
+      <!-- This container will be flexbox -->
+      <div class="container header">
+        <!-- Create a div to wrapper all the content and change the display to flex in CSS sheet -->
+
+        <div class="nav-wrapper">
+          <!-- Logo -->
+          <a href="#"><img src="images/logo.svg" alt="manage-logo" /> </a>
+
+          <!-- Toggle button -->
+          <button
+            class="mobile-nav-toggle"
+            aria-controls="primary-navigation"
+            aria-expanded="false"
+          >
+            <!-- Image sfor the hamburguer menu -->
+            <img
+              class="icon-hamburguer"
+              src="images/icon-hamburger.svg"
+              aria-hidden="true"
+            />
+            <img
+              class="icon-close"
+              src="images/icon-close.svg"
+              aria-hidden="true"
+            />
+            <span class="visually-hidden">Menu</span>
+          </button>
+          <!-- Here comes the links for navegation -->
+          <nav class="primary-navigation justfy-self" id="primary-navigation">
+            <!-- Here create a list of links -->
+            <ul aria-label="Primary" role="list" class="nav-list">
+              <li><a class="link" href="#">Pricing</a></li>
+              <li><a class="link" href="#">Product</a></li>
+              <li><a class="link" href="#">About us</a></li>
+              <li><a class="link" href="#">Careers</a></li>
+              <li><a class="link" href="#">Community</a></li>
+            </ul>
+          </nav>
+          <button class="button | display-sm-none display-md-inline-flex">
+            Get started
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Create a main part for the project - This part will grab the most important information on the page. Inside this create some sections to separate parts of the project-->
+    <main>
+      <!-- Section 1 -->
+      <section>
+        <div class="container">
+          <div class="even-columns padding-block-900">
+            <!-- This will contain the H1, paragraph and button -->
+
+            <!-- Left-1-box -->
+            <div class="flow">
+              <h1>Bring everyone together to build better products</h1>
+              <p>
+                Manage makes it simple to sofware teams to plan day-to-day taks
+                while keeping the larger team goals in view.
+              </p>
+              <button class="button">Get started</button>
+            </div>
+
+            <!-- Right-1-box -->
+            <div class="image ghost">
+              <img src="images/illustration-intro.svg" alt="grafic-images" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section>
+        <div class="container">
+          <div class="even-columns padding-block-900">
+            <!-- Left-2-box -->
+
+            <div class="flow text-center-sm-only">
+              <h2>What's different about manage?</h2>
+              <p class="section-text">
+                Manage provide the all functionality that your team needs,
+                without complexity. Our software is tailor-made for modern
+                digital project teams.
+              </p>
+            </div>
+
+            <!-- Right-2-box -->
+            <!-- In this we will create a list with title and content (h2 + p) -->
+            <div>
+              <ul class="numbered-items | flow" role="list">
+                <li>
+                  <div class="flow">
+                    <h3 class="numbered-title">Track Comapany-wide progress</h3>
+                    <p class="numbered-body" data-width="wide">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Nec feugiat in fermentum posuere urna nec
+                      tincidunt praesent.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div class="flow">
+                    <h3 class="numbered-title">Advanced built-in reports</h3>
+                    <p class="numbered-body" data-width="wide">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Nec feugiat in fermentum posuere urna nec
+                      tincidunt praesent.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div class="flow">
+                    <h3 class="numbered-title">
+                      Everything you need in one place
+                    </h3>
+                    <p class="numbered-body" data-width="wide">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section - 3 - Carousel -->
+      <section class="carousel carousel-main padding-block-900">
+        <article class="review container">
+          <h2 class="carousel-title">What they've said</h2>
+          <!-- Carousel here -->
+          <div class="underline"></div>
+          <div class="img-container">
+            <img id="person-img" src="person-1.jpeg" alt="person's picture" />
+          </div>
+          <h4 id="author">Sara Jones</h4>
+          <p id="job">ux designer</p>
+          <p id="info">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <!-- Prev next buttons
+          <div class="button-container">
+            <button class="prev-btn">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="next-btn">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div> -->
+          <!-- Random button -->
+          <button class="random-btn">Surprise me</button>
+        </article>
+      </section>
+
+      <!-- Section - 4 - Background-color = orange -->
+      <section class="ghost bg-orange padding-block-900">
+        <div class="container">
+          <div class="even-columns vertical-align-center">
+            <!-- Div for text -->
+            <div class="bg-text">
+              <h2>Simplify how your team work together.</h2>
+            </div>
+            <!-- div for button -->
+            <div class="justify-self-end">
+              <button class="button" data-type="inverted">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer section -->
+
+    <footer class="primary-footer">
+      <div class="bg-black">
+        <div class="primary-footer-wrapper |padding-block-900">
+          <!-- To complete this footer part we will create a structure with 3 columns -->
+
+          <!-- Logo image -->
+          <div class="social-logo">
+            <a href="#">
+              <svg class="logo" width="146" height="24">
+                <use xlink:href="images/logo-white.svg#logo"></use>
+              </svg>
+            </a>
+
+            <!-- List with socail icons -->
+            <!-- aria-label - It's for the people that use screen reader -->
+
+            <ul class="social-list" role="list" aria-label="Social links">
+              <li>
+                <a aria-label="facebook" href="#">
+                  <svg class="social-icon">
+                    <use
+                      xlink:href="images/social-icons.svg#icon-facebook"
+                    ></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a aria-label="youtube" href="#">
+                  <svg class="social-icon">
+                    <use
+                      xlink:href="images/social-icons.svg#icon-youtube"
+                    ></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a aria-label="twitter" href="#">
+                  <svg class="social-icon">
+                    <use
+                      xlink:href="images/social-icons.svg#icon-twitter"
+                    ></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a aria-label="pintrest" href="#">
+                  <svg class="social-icon">
+                    <use
+                      xlink:href="images/social-icons.svg#icon-pintrest"
+                    ></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a aria-label="instagram" href="#">
+                  <svg class="social-icon">
+                    <use
+                      xlink:href="images/social-icons.svg#icon-instagram"
+                    ></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Second and third columns  -->
+          <!-- Another navegation bar with links -->
+          <div class="nav">
+            <nav>
+              <ul class="footer-nav" role="list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#"> About us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- fourth column that conatins input form and button -->
+          <div class="form">
+            <form action="">
+              <input type="email" width="170px" />
+              <button class="btn-final" data-shadow="none">Go</button>
+              <p class="final-text">Copyright 2022. All Rights Reserved</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
